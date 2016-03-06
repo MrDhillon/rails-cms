@@ -1,0 +1,19 @@
+<h1>Demo#hello</h1>
+<p>Find me in app/views/demo/index.html.erb</p>
+<p>
+  Hello from hello !!!
+</p>
+<% @array.each do |n| %>
+  <%= n %><br />
+<%end%>
+
+<a href="/demo/index">Index page 1</a><br />
+<%= link_to('Index Page 2',{:action => 'index'})%>
+
+
+<br />
+id: <%= @id %> <br>
+Next page: <%= @page + 1 %>
+<hr />
+
+<%= params.inspect %>

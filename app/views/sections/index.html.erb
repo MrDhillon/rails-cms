@@ -1,0 +1,29 @@
+
+<div class="sections index">
+  <h2>Sections</h2>
+  <%= link_to("Add New Section", {:action => "new"}, :class => 'action new') %>
+  <table>
+    <tr class="listing" summary="Sections list">
+      <th>Position</th>
+      <th>Section</th>
+      <th>Visible</th>
+      <th>Editors</th>
+      <th>Content Type</th>
+      <th>Actions</th>
+    </tr>
+    <% @sections.each do |section| %>
+    <tr>
+      <td class="center"><%= section.position %></td>
+      <td><%= section.name %></td>
+      <td class="center"><%= section.visible ? 'Yes' : 'No' %></td>
+      <td class="center"><%= section.editors.size %></td>
+      <td class="center"><%= section.content_type %></td>
+      <td class="actions">
+        <%= link_to("Show",{:controller => 'sections', :action => 'show', :id => section.id },:class => 'action show')%>
+        <%= link_to("Edit",{:action => "edit", :id => section.id},:class => 'action Edit')%>
+        <%= link_to("Delete",{:action => 'delete', :id => section.id},:class => 'action Delete')%>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
