@@ -1,7 +1,8 @@
+<%= error_messages_for(@subject) %>
 <table summary="Subject form fields">
   <tr>
     <th>
-      Name
+      <%= f.label(:name, "Name") %>
     </th>
     <td>
       <%= f.text_field(:name) %>
@@ -9,18 +10,26 @@
   </tr>
   <tr>
     <th>
-      Position
+      <%= f.label(:position) %>
     </th>
     <td>
-      <%= f.text_field(:position) %>
+      <%= f.select(:position, 1..@subject_count) %>
     </td>
   </tr>
   <tr>
     <th>
-      Visible
+      <%= f.label(:visible) %>
     </th>
     <td>
-      <%= f.text_field(:visible) %>
+      <%= f.check_box(:visible) %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <%= f.label(:created_at) %>
+    </th>
+    <td>
+      <%= f.datetime_select(:created_at, :order => [:month,:day,:year]) %>
     </td>
   </tr>
 </table>

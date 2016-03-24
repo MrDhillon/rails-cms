@@ -7,3 +7,7 @@
 <a href="/demo/hello">Hello Page 1</a><br />
 <%= link_to('Hello Page 2',{:controller => 'demo',:action => 'hello'}) %><br />
 <%= link_to('Hello with parameters',{:controller => 'demo',:action => 'hello', :id => 20, :page => 5}) %>
+<br />
+<%= link_to('Roar','#', :onclick => "jsRoar('Javascript'); ") %>
+
+<%= javascript_tag("jsRoar('Rails');") %>

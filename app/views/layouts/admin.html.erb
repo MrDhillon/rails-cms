@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Rails CMS Admin | <%= @page_title || "Admin" %></title>
+    <%= stylesheet_link_tag('application',:media => 'all') %>
   </head>
   <body>
     <div id="header">
@@ -17,6 +18,9 @@
       <div id="content">
         <%= yield %>
       </div>
+    </div>
+    <div id="footer">
+
     </div>
   </body>
 </html>

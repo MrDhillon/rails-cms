@@ -1,7 +1,16 @@
+<%= error_messages_for(@section) %>
 <table summary="Section form fields">
   <tr>
     <th>
-      Name
+      <%= f.label(:page_id, "Page") %>
+    </th>
+    <td>
+      <%= f.select(:page_id, @pages.map {|p| [p.name,p.id]}) %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <%= f.label(:name, "Name") %>
     </th>
     <td>
       <%= f.text_field(:name) %>
@@ -9,26 +18,35 @@
   </tr>
   <tr>
     <th>
-      Position
+      <%= f.label(:position) %>
     </th>
     <td>
-      <%= f.text_field(:position) %>
+      <%= f.select(:position, 1..@section_count) %>
     </td>
   </tr>
   <tr>
     <th>
-      Visible
+      <%= f.label(:visible) %>
     </th>
     <td>
-      <%= f.text_field(:visible) %>
+      <%= f.check_box(:visible) %>
     </td>
   </tr>
   <tr>
     <th>
-      Content Type
+      <%= f.label(:content_type) %>
     </th>
     <td>
-      <%= f.text_field(:content_type) %>
+      <%= f.radio_button(:content_type, "text") %> Text
+      <%= f.radio_button(:content_type, "html") %> HTML
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <%= f.label(:content) %>
+    </th>
+    <td>
+      <%= f.text_area(:content, :size => "40X10") %>
     </td>
   </tr>
 </table>
